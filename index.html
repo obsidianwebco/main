@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="https://i.ibb.co/cK5FsSpf/Chat-GPT-Image-Mar-18-2026-11-22-01-AM.png">
+<title>Obsidian Web Co.</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #0f0f14;
+    color: white;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: #15151d;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav h1 {
+    color: #4da6ff;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #4da6ff;
+}
+
+/* HERO */
+.hero {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 20px;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url("https://i.ibb.co/pBnM7Q1t/OIP.webp") center/cover no-repeat;
+}
+
+.hero {
+    position: relative;
+}
+
+.hero-image-box {
+    position: absolute;
+    top: 86px;
+    right: 43%;
+    width: 200px;
+    height: 200px;
+    background: rgba(15, 23, 42, 0.7);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.4);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.hero-image-box img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.hero h2 {
+    font-size: 3rem;
+}
+
+.hero span {
+    color: #4da6ff;
+}
+
+.hero p {
+    margin-top: 10px;
+    max-width: 600px;
+}
+
+.hero button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: none;
+    background: #4da6ff;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    background: #3390ff;
+}
+
+/* SECTIONS */
+section {
+    padding: 60px 40px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+h3 {
+    color: #4da6ff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* CARDS */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #1b1b26;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: #222230;
+}
+
+/* CONTACT */
+.contact input,
+.contact textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 6px;
+    background: #2a2a38;
+    color: white;
+}
+
+.contact button {
+    padding: 12px;
+    background: #4da6ff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #15151d;
+}
+
+/* SCROLL ANIMATION */
+.fade {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.6s ease;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.btn {
+    margin-top: 10px;
+    padding: 12px 25px;
+    border: none;
+    background: #4da6ff;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #3390ff;
+}
+
+#packages {
+    text-align: center;
+}
+
+.center {
+    transform: translateY(-20px);
+    margin-top: 10px;
+    font-size: 20px;
+    color: #4da6ff;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+    <h1>Obsidian Web Co.</h1>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="home">
+    <h2>Building <span>Modern Websites</span></h2>
+    <p>Custom websites designed for performance, responsiveness, and clean user experience.</p>
+    <button onclick="scrollToSection('portfolio')">View My Work</button>
+</div>
+
+<div class="hero-image-box">
+    <img src="https://i.ibb.co/cK5FsSpf/Chat-GPT-Image-Mar-18-2026-11-22-01-AM.png" alt="Preview">
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="fade">
+    <h3>About</h3>
+    <p style="text-align:center; max-width:700px; margin:auto;">
+        Obsidian Web Co. focuses on building fast, modern, and reliable websites.
+        Every project is designed with performance, usability, and clean code in mind.
+    </p>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="fade">
+    <h3>Portfolio</h3>
+    <div class="grid">
+        <div class="card">
+            <h4>Restaurant Website</h4>
+            <p>Modern restaurant layout with menu and booking sections.</p>
+        </div>
+        <div class="card">
+            <h4>Gaming Community</h4>
+            <p>Community-style website for gamers with a clean layout.</p>
+        </div>
+        <div class="card">
+            <h4>Small Business</h4>
+            <p>Professional business website for services and companies.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="fade">
+    <h3>Services</h3>
+    <div class="grid">
+        <div class="card">
+            <h4>Custom Websites</h4>
+            <p>Fully coded websites built from scratch.</p>
+        </div>
+        <div class="card">
+            <h4>Fast Responsive Design</h4>
+            <p>Optimized for mobile, tablet, and desktop.</p>
+        </div>
+        <div class="card">
+            <h4>Website Fixes</h4>
+            <p>Bug fixes and performance improvements.</p>
+        </div>
+    </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages" class="fade">
+    <h3>Packages</h3>
+    <p class="center">
+        Secure payment via PayPal. After purchase, please return to the website and contact me with your project details.
+    </p>
+    
+    <div class="grid">
+
+        <div class="card">
+            <h4>Basic Website</h4>
+            <p>Perfect for small business websites or portfolios.</p>
+            <ul style="margin-top:10px; line-height:1.6;">
+                <li>Custom-built based on your needs</li>
+                <li>Fast, responsive design</li>
+                <li>1–2 day delivery</li>
+            </ul>
+            <h3 style="margin-top:15px;">$100</h3>
+            <a href="https://paypal.me/WyattGolder" target="_blank">
+                <button class="btn">Buy Now</button>
+            </a>
+        </div>
+
+        <div class="card" style="border: 2px solid #4da6ff;">
+            <p style="color:#4da6ff; font-weight:bold;">Most Popular</p>
+            <h4>Standard Website</h4>
+            <p>Best for growing businesses and more advanced portfolios.</p>
+            <ul style="margin-top:10px; line-height:1.6;">
+                <li>Custom-built based on your needs</li>
+                <li>Fast, responsive design</li>
+                <li>Mobile compatibility</li>
+                <li>2–4 day delivery</li>
+            </ul>
+            <h3 style="margin-top:15px;">$150</h3>
+            <a href="https://paypal.me/WyattGolder" target="_blank">
+                <button class="btn">Buy Now</button>
+            </a>
+        </div>
+
+        <div class="card">
+            <h4>Premium Website</h4>
+            <p>Best for advanced and fully custom projects.</p>
+            <ul style="margin-top:10px; line-height:1.6;">
+                <li>Custom-built based on your needs</li>
+                <li>Fast, responsive design</li>
+                <li>Mobile compatibility</li>
+                <li>Animations upon request</li>
+                <li>4–6 day delivery</li>
+            </ul>
+            <h3 style="margin-top:15px;">$200</h3>
+            <a href="https://paypal.me/WyattGolder" target="_blank">
+                <button class="btn">Buy Now</button>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="fade contact">
+    <h3>Contact</h3>
+
+    <form action="https://formspree.io/f/mvzwyqvl" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Obsidian Web Co. All rights reserved.</p>
+</footer>
+
+<script>
+function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+}
+
+const fades = document.querySelectorAll(".fade");
+
+window.addEventListener("scroll", () => {
+    fades.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+            el.classList.add("show");
+        }
+    });
+});
+</script>
+
+</body>
+</html>
