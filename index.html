@@ -7,21 +7,7 @@
 <title>Obsidian Web Co.</title>
 
 <style>
-
-.portfolio-btn {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    transition: 0.3s ease;
-    border-radius: 12px;
-}
-
-.portfolio-btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
-{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -43,16 +29,20 @@ nav {
     position: sticky;
     top: 0;
     z-index: 1000;
+    flex-wrap: wrap;
 }
 
 nav h1 {
     color: #4da6ff;
+    font-size: 1.5rem;
 }
 
 nav ul {
     display: flex;
     list-style: none;
     gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 nav a {
@@ -67,42 +57,16 @@ nav a:hover {
 
 /* HERO */
 .hero {
-    height: 90vh;
+    min-height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     flex-direction: column;
     padding: 20px;
+    position: relative;
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
     url("https://i.ibb.co/pBnM7Q1t/OIP.webp") center/cover no-repeat;
-}
-
-.hero {
-    position: relative;
-}
-
-.hero-image-box {
-    position: absolute;
-    top: 86px;
-    right: 43%;
-    width: 200px;
-    height: 200px;
-    background: rgba(15, 23, 42, 0.7);
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 25px rgba(59, 130, 246, 0.4);
-    border: 1px solid rgba(255,255,255,0.1);
-}
-
-.hero-image-box img {
-    width: 90%;
-    height: 90%;
-    object-fit: contain;
-    border-radius: 10px;
 }
 
 .hero h2 {
@@ -133,6 +97,28 @@ nav a:hover {
     background: #3390ff;
 }
 
+/* HERO IMAGE */
+.hero-image-box {
+    margin-top: 25px;
+    width: 180px;
+    height: 180px;
+    background: rgba(15, 23, 42, 0.7);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.4);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.hero-image-box img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
 /* SECTIONS */
 section {
     padding: 60px 40px;
@@ -146,13 +132,14 @@ h3 {
     text-align: center;
 }
 
-/* CARDS */
+/* GRID */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
 
+/* CARDS */
 .card {
     background: #1b1b26;
     padding: 20px;
@@ -163,6 +150,29 @@ h3 {
 .card:hover {
     transform: translateY(-5px);
     background: #222230;
+}
+
+/* BUTTON CARD */
+.portfolio-btn {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s ease;
+    border-radius: 12px;
+}
+
+.portfolio-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* IMAGES */
+.portfolio-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
 
 /* CONTACT */
@@ -177,12 +187,20 @@ h3 {
     color: white;
 }
 
-.contact button {
-    padding: 12px;
-    background: #4da6ff;
+.contact button,
+.btn {
+    padding: 12px 25px;
     border: none;
+    background: #4da6ff;
+    color: white;
     border-radius: 6px;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact button:hover,
+.btn:hover {
+    background: #3390ff;
 }
 
 /* FOOTER */
@@ -192,7 +210,7 @@ footer {
     background: #15151d;
 }
 
-/* SCROLL ANIMATION */
+/* ANIMATION */
 .fade {
     opacity: 0;
     transform: translateY(20px);
@@ -204,46 +222,55 @@ footer {
     transform: translateY(0);
 }
 
-.btn {
-    margin-top: 10px;
-    padding: 12px 25px;
-    border: none;
-    background: #4da6ff;
-    color: white;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: #3390ff;
-}
-
 #packages {
     text-align: center;
 }
 
 .center {
-    transform: translateY(-20px);
     margin-top: 10px;
     font-size: 20px;
     color: #4da6ff;
 }
 
-.portfolio-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
 
+    nav ul {
+        gap: 15px;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+        padding: 0 10px;
+    }
+
+    .hero-image-box {
+        width: 130px;
+        height: 130px;
+    }
+
+    section {
+        padding: 40px 20px;
+    }
+
+    .center {
+        font-size: 16px;
+    }
+}
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
     <h1>Obsidian Web Co.</h1>
     <ul>
@@ -256,16 +283,17 @@ footer {
     </ul>
 </nav>
 
-<!-- HERO -->
 <div class="hero" id="home">
     <h2>Building <span>Modern Websites</span></h2>
     <p>Custom websites designed for performance, responsiveness, and clean user experience.</p>
     <button onclick="scrollToSection('portfolio')">View My Work</button>
+
+    <div class="hero-image-box">
+        <img src="https://i.ibb.co/cK5FsSpf/Chat-GPT-Image-Mar-18-2026-11-22-01-AM.png" alt="Preview">
+    </div>
 </div>
 
-<div class="hero-image-box">
-    <img src="https://i.ibb.co/cK5FsSpf/Chat-GPT-Image-Mar-18-2026-11-22-01-AM.png" alt="Preview">
-</div>
+<!-- KEEP THE REST OF YOUR HTML EXACTLY THE SAME BELOW -->
 
 <!-- ABOUT -->
 <section id="about" class="fade">
